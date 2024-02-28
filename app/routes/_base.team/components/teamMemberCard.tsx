@@ -10,7 +10,7 @@ type TeamMemberCardProps = {
 
 const TeamMemberCard = ({ name, primaryImage, children }: TeamMemberCardProps) => {
 	return (
-		<div className='group max-w-sm relative bg-base-100 shadow-lg rounded-lg overflow-hidden'>
+		<div className='group max-w-sm sm:max-w-lg sm:w-96 relative bg-base-100 drop-shadow-lg rounded-lg overflow-hidden'>
 			{/* Base Content */}
 			<div className='w-full h-full flex flex-col items-center justify-center'>
 				{/* Primary Image */}
