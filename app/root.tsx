@@ -1,8 +1,9 @@
-import type { LinksFunction } from '@remix-run/node';
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from '@remix-run/react';
 import tailwindStyle from './styles/tailwind.css';
 import Logo from './resources/images/icons/logo';
 import ReactDomServer from 'react-dom/server';
+import logoFull from '~/resources/images/logo-full.png';
 
 export const links: LinksFunction = () => [
 	{ rel: 'stylesheet', href: tailwindStyle },
@@ -11,6 +12,14 @@ export const links: LinksFunction = () => [
 		href: `data:image/svg+xml;utf8,${encodeURIComponent(ReactDomServer.renderToString(<Logo color='#47abff' />))}`,
 	},
 ];
+
+export const meta: MetaFunction = () => {
+	return [
+		{ title: 'Bertemes Johnson & Co' },
+		{ name: 'description', content: 'Bertemes Johnson & Company Accounting Firm' },
+		{ name: 'og:image', content: logoFull },
+	];
+};
 
 export default function App() {
 	return (
