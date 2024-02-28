@@ -5,11 +5,9 @@ import payrollImage from '~/resources/images/payroll.jpeg';
 import taxImage from '~/resources/images/taxation.jpeg';
 import assuranceImage from '~/resources/images/compilation.jpeg';
 
-export const meta: MetaFunction = () => {
-	return [
-		{ title: 'Bertemes Johnson & Co' },
-		{ name: 'description', content: 'Bertemes Johnson & Company Accounting Firm' },
-	];
+export const meta: MetaFunction = ({ matches }) => {
+	const parentMeta = matches.flatMap((match) => match.meta ?? []);
+	return [...parentMeta];
 };
 
 export default function Index() {
