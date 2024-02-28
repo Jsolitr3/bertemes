@@ -1,0 +1,9 @@
+const Footer = () => {
+	return (
+		<footer className='w-full flex flex-none h-10 items-center justify-center text-center text-secondary-content bg-secondary text-sm'>
+			<p>&copy; {new Date().getFullYear()} Bertemes Johnson & Company</p>
+		</footer>
+	);
+};
+
+export default Footer;

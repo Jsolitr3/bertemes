@@ -1,0 +1,35 @@
+import type { MetaFunction } from '@remix-run/node';
+import Logo from '../../images/icons/logo';
+
+export const meta: MetaFunction = () => {
+	return [
+		{ title: 'Bertemes Johnson & Co' },
+		{ name: 'description', content: 'Bertemes Johnson & Company Accounting Firm' },
+	];
+};
+
+export default function Index() {
+	return (
+		<div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.8' }}>
+			<h1 className='bg-primary'>Welcome to Remix</h1>
+			<ul>
+				<Logo />
+				<li>
+					<a target='_blank' href='https://remix.run/tutorials/blog' rel='noreferrer'>
+						15m Quickstart Blog Tutorial
+					</a>
+				</li>
+				<li>
+					<a target='_blank' href='https://remix.run/tutorials/jokes' rel='noreferrer'>
+						Deep Dive Jokes App Tutorial
+					</a>
+				</li>
+				<li>
+					<a target='_blank' href='https://remix.run/docs' rel='noreferrer'>
+						Remix Docs
+					</a>
+				</li>
+			</ul>
+		</div>
+	);
+}
