@@ -10,7 +10,7 @@ type TeamMemberCardProps = {
 
 const TeamMemberCard = ({ name, primaryImage, children }: TeamMemberCardProps) => {
 	return (
-		<div className='max-w-sm relative bg-base-100 shadow-lg rounded-lg overflow-hidden'>
+		<div className='group max-w-sm relative bg-base-100 shadow-lg rounded-lg overflow-hidden'>
 			{/* Base Content */}
 			<div className='w-full h-full flex flex-col items-center justify-center'>
 				{/* Primary Image */}
@@ -27,9 +27,9 @@ const TeamMemberCard = ({ name, primaryImage, children }: TeamMemberCardProps) =
 			</div>
 
 			{/* Hover Overlay */}
-			<div className='absolute inset-0 backdrop-blur-lg opacity-0 hover:opacity-100 transition-opacity duration-300'>
+			<div className='absolute w-full bottom-0 bg-base-100 opacity-85 text-secondary h-0 group-hover:h-full transition-height duration-300'>
 				{/* Hover Content */}
-				<div className='absolute top-0 inset-0 p-4 flex flex-col text-base-100 overflow-auto '>{children}</div>
+				<div className='absolute w-full bottom-0 inset-0 p-4 flex flex-col overflow-auto'>{children}</div>
 			</div>
 		</div>
 	);
