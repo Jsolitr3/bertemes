@@ -3,7 +3,17 @@
 
 import Collapsible from './components/collapsible';
 import videoLogo from '~/resources/images/logo-video.png';
+import type { LoaderFunctionArgs } from '@remix-run/node';
+import { useLoaderData } from '@remix-run/react';
+import { useEffect, useRef } from 'react';
+
 // import captions from '~/resources/captions/demoCaptions.vtt';
+
+export const loader = ({ request }: LoaderFunctionArgs) => {
+	const url = new URL(request.url);
+	const service = url.searchParams.get('service');
+	return { service };
+};
 
 // This is a pretty display of the following services: QUICKBOOKS®, INCOME TAX ADVISING & COMPLIANCE, PAYROLL SERVICES, COMPILATION & REVIEW
 // This page needs to display each of these in a super modern look with room for a description of each service.
@@ -11,13 +21,46 @@ export default function Route() {
 	const sectionClass = 'bg-base-100 text-secondary p-6 rounded-lg drop-shadow-md mb-8';
 	const sectionHeaderClass = 'sm:text-xl text-lg font-semibold mb-4';
 	const sectionContentClass = 'sm:text-[1rem] text-sm';
+	const { service } = useLoaderData<typeof loader>();
+	const quickbooksRef = useRef<HTMLDivElement>(null);
+	const taxRef = useRef<HTMLDivElement>(null);
+	const payrollRef = useRef<HTMLDivElement>(null);
+	const assuranceRef = useRef<HTMLDivElement>(null);
+
+	const scrollToService = (service: string) => {
+		switch (service) {
+			case 'quickbooks':
+				quickbooksRef.current?.scrollIntoView({ behavior: 'smooth' });
+				break;
+			case 'tax':
+				taxRef.current?.scrollIntoView({ behavior: 'smooth' });
+				break;
+			case 'payroll':
+				payrollRef.current?.scrollIntoView({ behavior: 'smooth' });
+				break;
+			case 'assurance':
+				assuranceRef.current?.scrollIntoView({ behavior: 'smooth' });
+				break;
+		}
+	};
+
+	useEffect(() => {
+		if (service) {
+			scrollToService(service);
+		}
+	}, [service]);
 
 	return (
 		<div className='container mx-auto p-8 text-secondary-content'>
 			<h1 className='sm:text-4xl text-3xl font-bold mb-8 text-secondary'>Our Services</h1>
 
 			{/* QuickBooks Section */}
-			<Collapsible title='QuickBooks®' description='Unlock the Power of QuickBooks with Us!'>
+			<Collapsible
+				ref={quickbooksRef}
+				title='QuickBooks®'
+				collapsed={service != 'quickbooks'}
+				description='Unlock the Power of QuickBooks with Us!'
+			>
 				{/* Introduction */}
 				<p className={`${sectionContentClass} mb-8 text-secondary-content`}>
 					As Certified Advanced QuickBooks ProAdvisors and Certified Public Accountants, we are your go-to experts for
@@ -54,7 +97,12 @@ export default function Route() {
 			</Collapsible>
 
 			{/* Income Tax Advising & Compliance Section */}
-			<Collapsible title='Income Tax Advising & Compliance' description='Optimize Your Finances with Our Tax Services!'>
+			<Collapsible
+				ref={taxRef}
+				title='Income Tax Advising & Compliance'
+				collapsed={service != 'tax'}
+				description='Optimize Your Finances with Our Tax Services!'
+			>
 				{/* <h1 className='text-4xl font-bold mb-8'>Optimize Your Finances with Our Tax Services</h1> */}
 
 				{/* Tax Preparation */}
@@ -102,7 +150,12 @@ export default function Route() {
 			</Collapsible>
 
 			{/* Payroll Services Section */}
-			<Collapsible title='Payroll Services' description='Streamline Your Payroll Process.'>
+			<Collapsible
+				ref={payrollRef}
+				title='Payroll Services'
+				collapsed={service != 'payroll'}
+				description='Streamline Your Payroll Process.'
+			>
 				{/* Payroll Services Details */}
 				<div className={sectionClass}>
 					<h2 className={sectionHeaderClass}>Tailored Payroll Services</h2>
@@ -143,7 +196,12 @@ export default function Route() {
 			</Collapsible>
 
 			{/* Compilation & Review Section */}
-			<Collapsible title='Compilation & Review' description='Confidence in Your Financial Statements.'>
+			<Collapsible
+				ref={assuranceRef}
+				title='Compilation & Review'
+				collapsed={service != 'assurance'}
+				description='Confidence in Your Financial Statements.'
+			>
 				{/* <h1 className="text-4xl font-bold mb-8">Confidence in Your Financial Statements</h1> */}
 
 				{/* Assurance Solutions Overview */}

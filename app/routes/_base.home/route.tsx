@@ -37,7 +37,7 @@ export default function Index() {
 				<div className='absolute z-20 text-base-100 text-center bg-secondary rounded-lg bg-opacity-50 p-4'>
 					<h1 className='text-4xl font-bold mb-4'>Optimize Your Tax Strategy</h1>
 					<Link
-						className='px-6 py-2 bg-green-500 text-base-100 rounded-full hover:bg-green-600 transition duration-300'
+						className='px-6 py-2 bg-primary text-base-100 rounded-full hover:bg-accent transition duration-300'
 						to='/services?service=tax'
 					>
 						Explore Tax Services
@@ -52,7 +52,7 @@ export default function Index() {
 				<div className='absolute z-20 text-base-100 text-center bg-secondary rounded-lg bg-opacity-50 p-4'>
 					<h1 className='text-4xl font-bold mb-4'>Streamline Your Payroll</h1>
 					<Link
-						className='px-6 py-2 bg-orange-500 text-base-100 rounded-full hover:bg-orange-600 transition duration-300'
+						className='px-6 py-2 bg-primary text-base-100 rounded-full hover:bg-accent transition duration-300'
 						to='/services?service=payroll'
 					>
 						Explore Payroll
@@ -67,7 +67,7 @@ export default function Index() {
 				<div className='absolute z-20 text-base-100 text-center bg-secondary rounded-lg bg-opacity-50 p-4'>
 					<h1 className='text-4xl font-bold mb-4'>Ensure Financial Confidence</h1>
 					<Link
-						className='px-6 py-2 bg-purple-500 text-base-100 rounded-full hover:bg-purple-600 transition duration-300'
+						className='px-6 py-2 bg-primary text-base-100 rounded-full hover:bg-accent transition duration-300'
 						to='/services?service=assurance'
 					>
 						Explore Assurance

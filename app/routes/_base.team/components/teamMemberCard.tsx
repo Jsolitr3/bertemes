@@ -1,9 +1,10 @@
 // TeamMemberCard.jsx
 import React from 'react';
+import placeholder from '~/resources/images/photo-placeholder.jpeg';
 
 type TeamMemberCardProps = {
 	name: string;
-	primaryImage: string;
+	primaryImage?: string;
 	children?: React.ReactNode;
 };
 
@@ -13,7 +14,11 @@ const TeamMemberCard = ({ name, primaryImage, children }: TeamMemberCardProps) =
 			{/* Base Content */}
 			<div className='w-full h-full flex flex-col items-center justify-center'>
 				{/* Primary Image */}
-				<img className='w-full h-full object-cover object-center' src={primaryImage} alt={`IPhotograph of ${name}`} />
+				<img
+					className='w-full h-full object-cover object-center'
+					src={primaryImage || placeholder}
+					alt={`IPhotograph of ${name}`}
+				/>
 
 				{/* Name */}
 				<div className='absolute rounded-lg p-2 bg-gradient-to-tr from-primary to-60% to-secondary bottom-0 left-0 text-secondary-content font-bold text-lg mb-4 ml-4'>

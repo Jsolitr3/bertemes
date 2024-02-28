@@ -67,7 +67,12 @@ export default function Route() {
 						</p>
 					</div>
 				</TeamMemberCard>
-				{/* <TeamMemberCard name='Brett Bertemes' primaryImage={WillBertemesHeadshot} /> */}
+				<TeamMemberCard name='Brett Bertemes, CPA'>
+					<p>
+						Brett Bertemes, CPA, brings over 5 years of extensive experience in accounting and tax. He enjoys working
+						out, playing video games, running, and most of all, his best pal Justin Solitro.
+					</p>
+				</TeamMemberCard>
 			</div>
 		</div>
 	);
