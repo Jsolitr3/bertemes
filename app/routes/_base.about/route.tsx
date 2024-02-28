@@ -1,6 +1,6 @@
 export default function Route() {
 	return (
-		<div className='bg-base-100 min-h-screen p-8'>
+		<div className='bg-base-100 min-h-full p-8'>
 			<div className='max-w-3xl mx-auto bg-base-100 rounded-md p-8 drop-shadow-xl text-secondary'>
 				<h2 className='sm:text-4xl text-2xl font-bold mb-6 text-primary'>Why Choose Bertemes Johnson & Company?</h2>
 
