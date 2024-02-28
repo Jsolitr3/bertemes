@@ -76,7 +76,7 @@ export default function Route() {
 				<p className='text-lg mb-2'>
 					<span className='font-bold'>Phone:</span> (330) 635-2318
 				</p>
-				<p className='text-lg mb-2'>
+				{/* <p className='text-lg mb-2'>
 					<span className='font-bold'>Email:</span>{' '}
 					<a className='text-primary' href='mailto:will@bertemes.com'>
 						will@bertemes.com
@@ -85,7 +85,7 @@ export default function Route() {
 					<a className='text-primary' href='mailto:therese@bertemes.com'>
 						therese@bertemes.com
 					</a>
-				</p>
+				</p> */}
 				<p className='text-lg mb-4'>
 					<span className='font-bold'>On Facebook:</span>{' '}
 					<a
