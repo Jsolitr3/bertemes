@@ -1,14 +1,8 @@
-import type { MetaFunction } from '@remix-run/node';
 import { Link } from '@remix-run/react';
 import quickbooksImage from '~/resources/images/quickbooks.jpeg';
 import payrollImage from '~/resources/images/payroll.jpeg';
 import taxImage from '~/resources/images/taxation.jpeg';
 import assuranceImage from '~/resources/images/compilation.jpeg';
-
-export const meta: MetaFunction = ({ matches }) => {
-	const parentMeta = matches.flatMap((match) => match.meta ?? []);
-	return [...parentMeta];
-};
 
 export default function Index() {
 	return (
